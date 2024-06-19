@@ -1,0 +1,22 @@
+ ### código ###
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  run_on_push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: echo "Este é um script para a atividade do módulo 4 executado no push"
+      
+  run_on_schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: echo "Este é um script para a atividade do módulo 4 executado no agendamento"
